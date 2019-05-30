@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Rigidbody m_rb = null;
+    Animator m_animator = null;
     void Start()
     {
-        
+        m_rb = GetComponent<Rigidbody>();
+        m_animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Vector3 translate = Vector3.zero;
+        translate.z = Input.GetAxis("Vertical");
+        translate.x =  Input.GetAxis("Horizontal");
+
+        if (translate.x > 0.0f || translate.z > 0.0f)
+        {
+            m_animator.SetBool("Walking", true);
+        }
+        else
+        {
+            m_animator.SetBool("Walking", false);
+        }
+
+        m_rb.velocity= translate;
     }
 }
