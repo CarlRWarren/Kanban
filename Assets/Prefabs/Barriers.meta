@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Barriers.meta
 guid: 217c5b1973a2e124eac853ccd0315941
+=======
+guid: 35c9ba9ca2b69f2419c63a344bae9240
+>>>>>>> 0304c9fc7c2214707aef3ed848c6448859552cd8:Assets/Textures.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

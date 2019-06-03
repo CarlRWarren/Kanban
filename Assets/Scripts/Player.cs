@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
         translate.z = Input.GetAxis("Vertical") * 5.0f;
         translate.x = Input.GetAxis("Horizontal") * 5.0f;
 
+
+
         if (translate.x != 0.0f || translate.z != 0.0f)
         {
             m_animator.SetBool("Walking", true);
