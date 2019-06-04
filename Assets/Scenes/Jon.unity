@@ -419,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73135a2d8ab61749a4377cda9efd591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inControl: 1
 --- !u!65 &1349014021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -430,8 +431,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.75, y: 1, z: 0.75}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1662651388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1755646104177140, guid: 2884e6b071e1c2a4faef2e7fd67b481e,
