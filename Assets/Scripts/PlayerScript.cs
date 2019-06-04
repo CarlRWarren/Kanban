@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
+    int score = 0;
     float timer = 0.0f;
     public bool inControl = true;
+    public TextMeshProUGUI scoreGui = null;
     void Update()
     {
         if (inControl)
@@ -16,6 +19,8 @@ public class PlayerScript : MonoBehaviour
                 gameObject.GetComponentInChildren<Animator>().SetTrigger("Hop");
                 transform.rotation = new Quaternion(0, 0, 0, 0);
                 transform.Translate(Vector3.forward);
+                score++;
+                scoreGui.text = score.ToString();
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
