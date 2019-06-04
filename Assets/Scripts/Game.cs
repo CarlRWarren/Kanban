@@ -32,6 +32,11 @@ public class Game : MonoBehaviour
 
     }
 
+    public void SetCharacter(string character)
+    {
+        m_characterName = character;
+    }
+
     public void LoadMainMenu()
     {
         switch(m_characterName)
