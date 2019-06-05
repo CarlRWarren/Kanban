@@ -77,6 +77,7 @@ public class PlayerScript : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, 1)), 180);
                 transform.Translate(new Vector3(0, 0, 1));
                 timer = 0;
+                GameObject.FindGameObjectWithTag("MoneyManager").GetComponent<MoneyManager>().AddMoney();
             }
         }
 
