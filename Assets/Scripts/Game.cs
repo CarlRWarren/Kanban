@@ -69,4 +69,9 @@ public class Game : MonoBehaviour
         }
         PlayerPrefs.SetString("CharacterName", m_characterName);
     }
+
+    public void BackToMain()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Savannah");
+    }
 }

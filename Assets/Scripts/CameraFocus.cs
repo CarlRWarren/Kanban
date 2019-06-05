@@ -43,18 +43,23 @@ public class CameraFocus : MonoBehaviour
         {
             case 0:
                 gameObjects[0].SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Penguin");
                 break;
             case 1:
                 gameObjects[1].SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Cat");
                 break;
             case 2:
                 gameObjects[2].SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Chicken");
                 break;
             case 3:
                 gameObjects[3].SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Dog");
                 break;
             case 4:
                 gameObjects[4].SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Lion");
                 break;
         }
        

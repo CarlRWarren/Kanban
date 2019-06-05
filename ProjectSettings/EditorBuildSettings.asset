@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jon.unity
     guid: 43710df6ed81a60468090f9f55c94c9e
+  - enabled: 1
+    path: Assets/Scenes/CharacterStore.unity
+    guid: 9b3e6ef32781f594a935d060807f321e
   m_configObjects: {}
