@@ -9,7 +9,7 @@ public class Game : MonoBehaviour
     public string m_characterName = "Penguin";
     void Start()
     {
-        PlayerPrefs.SetString("CharacterName", m_characterName);
+        //PlayerPrefs.SetString("CharacterName", m_characterName);
         LoadMainMenu();
     }
 
@@ -30,16 +30,18 @@ public class Game : MonoBehaviour
 
     public void OpenShop()
     {
-
+        UnityEngine.SceneManagement.SceneManager.LoadScene("CharacterStore");
     }
 
     public void SetCharacter(string character)
     {
         m_characterName = character;
+        PlayerPrefs.SetString("CharacterName", m_characterName);
     }
 
     public void LoadMainMenu()
     {
+        m_characterName = PlayerPrefs.GetString("CharacterName");
         for (int i = 0; i < m_menuPlayers.Length; i++)
         {
             m_menuPlayers[i].SetActive(false);
