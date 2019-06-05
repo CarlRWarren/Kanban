@@ -5,34 +5,37 @@ using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
-    int score = 0;
     float timer = 0.0f;
     public bool inControl = true;
-    public TextMeshProUGUI scoreGui = null;
+
     void Update()
     {
+        timer += Time.deltaTime;
         if (inControl)
         {
-            timer += Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && timer >= 0.5f)
             {
                 gameObject.GetComponentInChildren<Animator>().SetTrigger("Hop");
-                transform.rotation = new Quaternion(0, 0, 0, 0);
-                transform.Translate(Vector3.forward);
-                score++;
-                scoreGui.text = score.ToString();
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, 1)), 180);
+                transform.Translate(new Vector3(0, 0, 1));
+                timer = 0;
+                //GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<MoneyManager>().AddMoney();
             }
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) && timer >= 0.5f)
             {
                 gameObject.GetComponentInChildren<Animator>().SetTrigger("Hop");
-                transform.rotation = new Quaternion(0, -90, 0, 0);
-                transform.Translate(Vector3.right);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, 1)), 180);
+                transform.Translate(new Vector3(-1, 0, 0));
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(-1, 0, 0)), 180);
+                timer = 0;
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) && timer >= 0.5f)
             {
                 gameObject.GetComponentInChildren<Animator>().SetTrigger("Hop");
-                transform.rotation = new Quaternion(0, 90, 0, 0);
-                transform.Translate(Vector3.left);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, 1)), 180);
+                transform.Translate(new Vector3(1, 0, 0));
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(1,0,0)), 180);
+                timer = 0;
             }
         }
     }
@@ -40,7 +43,9 @@ public class PlayerScript : MonoBehaviour
     public void Die()
     {
         inControl = false;
-        transform.rotation = new Quaternion(90, 0, 0, 0);
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(0, -1, 0)), 180);
+        transform.Translate(0, -0.8f, 0);
         //Do gameover stuffs
     }
 }

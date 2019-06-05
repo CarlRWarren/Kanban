@@ -24,11 +24,11 @@ public class MoneyManager : MonoBehaviour
 
     public void AddMoney()
     {
-        m_money += 100;
+        m_money += 1;
     }
 
-    public void LoseMoney()
+    public void LoseMoney(int amount)
     {
-        m_money -= 100;
+        m_money -= amount;
     }
 }
