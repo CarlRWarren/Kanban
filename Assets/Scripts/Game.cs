@@ -9,7 +9,7 @@ public class Game : MonoBehaviour
     public string m_characterName = "Penguin";
     void Start()
     {
-        PlayerPrefs.SetString("CharacterName", m_characterName);
+        //PlayerPrefs.SetString("CharacterName", m_characterName);
         LoadMainMenu();
     }
 
@@ -36,6 +36,7 @@ public class Game : MonoBehaviour
     public void SetCharacter(string character)
     {
         m_characterName = character;
+        PlayerPrefs.SetString("CharacterName", m_characterName);
     }
 
     public void LoadMainMenu()
