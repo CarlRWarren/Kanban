@@ -16,6 +16,16 @@ public class CameraFocus : MonoBehaviour
         }
     }
 
+    public void SelectRight()
+    {
+        gameObjects[index].SetActive(false);
+        index = index < 4 ? index += 1 : 0;
+    }
+    public void SelectLeft()
+    {
+        gameObjects[index].SetActive(false);
+        index = index > 0 ? index -= 1 : 4;
+    }
     private void Update()
     {
         //60 degrees apart
