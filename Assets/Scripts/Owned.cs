@@ -24,7 +24,7 @@ public class Owned : MonoBehaviour
     {
 
     }
-    public void BoughtToSelect(bool enoughMoney=true)
+    public void BoughtToSelect(bool enoughMoney)
     {
         if (enoughMoney)
         {
