@@ -9,13 +9,11 @@ public class MoneyManager : MonoBehaviour
 
     private int m_money = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_money = PlayerPrefs.GetInt("Money");
     }
 
-    // Update is called once per frame
     void Update()
     {
         m_moneyText.text = "$" + m_money.ToString("D5");
