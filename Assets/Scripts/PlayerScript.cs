@@ -8,6 +8,14 @@ public class PlayerScript : MonoBehaviour
     float timer = 0.0f;
     public bool inControl = true;
 
+    private void Awake()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+
+        }
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
@@ -34,10 +42,18 @@ public class PlayerScript : MonoBehaviour
                 gameObject.GetComponentInChildren<Animator>().SetTrigger("Hop");
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, 1)), 180);
                 transform.Translate(new Vector3(1, 0, 0));
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(1,0,0)), 180);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(1, 0, 0)), 180);
+                timer = 0;
+            }
+            if (timer >= 1.5f)
+            {
+                gameObject.GetComponentInChildren<Animator>().SetTrigger("Hop");
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, 1)), 180);
+                transform.Translate(new Vector3(0, 0, 1));
                 timer = 0;
             }
         }
+
     }
 
     public void Die()
