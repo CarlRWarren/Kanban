@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
     public string m_characterName = "Penguin";
     void Start()
     {
+        PlayerPrefs.SetString("CharacterName", m_characterName);
         LoadMainMenu();
     }
 
@@ -39,43 +40,33 @@ public class Game : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        switch(m_characterName)
+        for (int i = 0; i < m_menuPlayers.Length; i++)
+        {
+            m_menuPlayers[i].SetActive(false);
+        }
+        switch (m_characterName)
         {
             case "Penguin":
-                for(int i = 0; i < m_menuPlayers.Length; i++)
-                {
-                    m_menuPlayers[i].SetActive(false);
-                    if(i == 0) m_menuPlayers[i].SetActive(true);
-                }
+                m_menuPlayers[0].SetActive(true);
+                m_characterName = "Penguin";
                 break;
             case "Cat":
-                for (int i = 0; i < m_menuPlayers.Length; i++)
-                {
-                    m_menuPlayers[i].SetActive(false);
-                    if (i == 1) m_menuPlayers[i].SetActive(true);
-                }
+                m_menuPlayers[1].SetActive(true);
+                m_characterName = "Cat";
                 break;
             case "Chicken":
-                for (int i = 0; i < m_menuPlayers.Length; i++)
-                {
-                    m_menuPlayers[i].SetActive(false);
-                    if (i == 2) m_menuPlayers[i].SetActive(true);
-                }
+                m_menuPlayers[2].SetActive(true);
+                m_characterName = "Chicken";
                 break;
             case "Dog":
-                for (int i = 0; i < m_menuPlayers.Length; i++)
-                {
-                    m_menuPlayers[i].SetActive(false);
-                    if (i == 3) m_menuPlayers[i].SetActive(true);
-                }
+                m_menuPlayers[3].SetActive(true);
+                m_characterName = "Dog";
                 break;
             case "Lion":
-                for (int i = 0; i < m_menuPlayers.Length; i++)
-                {
-                    m_menuPlayers[i].SetActive(false);
-                    if (i == 4) m_menuPlayers[i].SetActive(true);
-                }
+                m_menuPlayers[4].SetActive(true);
+                m_characterName = "Lion";
                 break;
         }
+        PlayerPrefs.SetString("CharacterName", m_characterName);
     }
 }
