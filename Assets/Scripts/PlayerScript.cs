@@ -10,9 +10,35 @@ public class PlayerScript : MonoBehaviour
 
     private void Awake()
     {
-        for(int i = 0; i < transform.childCount; i++)
-        {
+        PlayerPrefs.SetString("CharacterName", "Penguin");
 
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        switch(PlayerPrefs.GetString("CharacterName"))
+        {
+            case "Penguin":
+                transform.GetChild(0).gameObject.SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Penguin");
+                break;
+            case "Cat":
+                transform.GetChild(1).gameObject.SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Cat");
+                break;
+            case "Chicken":
+                transform.GetChild(2).gameObject.SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Chicken");
+                break;
+            case "Dog":
+                transform.GetChild(3).gameObject.SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Dog");
+                break;
+            case "Lion":
+                transform.GetChild(4).gameObject.SetActive(true);
+                PlayerPrefs.SetString("CharacterName", "Lion");
+                break;
         }
     }
 
