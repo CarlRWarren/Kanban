@@ -27,7 +27,7 @@ public class PlayerScript : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, 1)), 180);
                 transform.Translate(new Vector3(0, 0, 1));
                 timer = 0;
-                //GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<MoneyManager>().AddMoney();
+                GameObject.FindGameObjectWithTag("MoneyManager").GetComponent<MoneyManager>().AddMoney();
             }
             if (Input.GetKeyDown(KeyCode.A) && timer >= 0.5f)
             {
