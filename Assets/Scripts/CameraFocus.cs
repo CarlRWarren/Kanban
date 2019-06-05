@@ -62,6 +62,9 @@ public class CameraFocus : MonoBehaviour
                 PlayerPrefs.SetString("CharacterName", "Lion");
                 break;
         }
-       
+    }
+    public void BackToMain()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Savannah");
     }
 }

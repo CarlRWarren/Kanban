@@ -30,7 +30,7 @@ public class Game : MonoBehaviour
 
     public void OpenShop()
     {
-
+        UnityEngine.SceneManagement.SceneManager.LoadScene("CharacterStore");
     }
 
     public void SetCharacter(string character)
@@ -40,6 +40,7 @@ public class Game : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        m_characterName = PlayerPrefs.GetString("CharacterName");
         for (int i = 0; i < m_menuPlayers.Length; i++)
         {
             m_menuPlayers[i].SetActive(false);
