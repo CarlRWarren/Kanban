@@ -11,7 +11,7 @@ public class CarSpawner : MonoBehaviour
 
     void Start()
     {
-        car = Instantiate(possibleCars[Random.Range(0, possibleCars.Length - 1)], transform.position, Quaternion.identity, transform);
+        car = Instantiate(possibleCars[Random.Range(0, possibleCars.Length - 1)], transform.position, new Quaternion(0, 180, 0, 0), transform);
         carSpeed += Random.Range(0, 3);
     }
 
@@ -19,7 +19,7 @@ public class CarSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        car.transform.position += (car.transform.right * (carSpeed) * Time.deltaTime);
+        car.transform.position += (-car.transform.right * (carSpeed) * Time.deltaTime);
 
         if (timer >= 5.0f)
         {
@@ -27,11 +27,11 @@ public class CarSpawner : MonoBehaviour
         }
         if (car.transform.position.x >= 6)
         {
-            car = Instantiate(possibleCars[Random.Range(0, possibleCars.Length - 1)], transform.position, Quaternion.identity, transform);
+            car = Instantiate(possibleCars[Random.Range(0, possibleCars.Length - 1)], transform.position, new Quaternion(0, 180, 0, 0), transform);
         }
         if (car.transform.position.x <= -6)
         {
-            car = Instantiate(possibleCars[Random.Range(0, possibleCars.Length - 1)], transform.position, Quaternion.identity, transform);
+            car = Instantiate(possibleCars[Random.Range(0, possibleCars.Length - 1)], transform.position, new Quaternion(0, 180, 0, 0), transform);
         }
 
     }
