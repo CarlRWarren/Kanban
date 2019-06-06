@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MoneyManager
+  - Row
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class WorldGenerator : MonoBehaviour
 {
     public GameObject player = null;
     public GameObject[] rows = null;
-    public GameObject row = null;
+    public GameObject[] possibleRows = null;
 
     private void Awake()
     {
@@ -14,8 +14,11 @@ public class WorldGenerator : MonoBehaviour
 
         for (int i = 0; i < rows.Length; i++)
         {
-            rows[i] = Instantiate(row, new Vector3(0, 0, i - 2), Quaternion.identity, null);
-            rows[i].GetComponent<RowMaker>().Generate();
+            rows[i] = Instantiate(possibleRows[Random.Range(0, possibleRows.Length-1)], new Vector3(0, 0, i - 2), Quaternion.identity, null);
+            if (rows[i].tag == "Row")
+            {
+                rows[i].GetComponent<RowMaker>().Generate();
+            }
         }
     }
 
@@ -27,9 +30,15 @@ public class WorldGenerator : MonoBehaviour
             {
                 if (player.transform.position.z - rows[i].transform.position.z > 5)
                 {
+                    Debug.Log("PLAYER - " + player.transform.position);
+                    Debug.Log("ROWS - " + rows[i].transform.position);
                     Destroy(rows[i].gameObject);
-                    rows[i] = Instantiate(row, new Vector3(0, 0, rows[rows.Length - 1].transform.position.z + i), Quaternion.identity, null);
-                    rows[i].GetComponent<RowMaker>().Generate();
+                    rows[i] = Instantiate(possibleRows[Random.Range(0, possibleRows.Length - 1)], new Vector3(0, 0, rows[rows.Length - 1].transform.position.z + i), Quaternion.identity, transform);
+
+                    if (rows[i].tag == "Row")
+                    {
+                        rows[i].GetComponent<RowMaker>().Generate();
+                    }
                 }
             }
         }

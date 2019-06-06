@@ -326,7 +326,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1349014017}
   rows: []
-  row: {fileID: 7857355358696452928, guid: c4a2a2387d6749d4e8f7a1d69a5d0b25, type: 3}
+  possibleRows:
+  - {fileID: 7857355358696452928, guid: 3d4cc0ee92438bb4996d2b206abbf8a8, type: 3}
+  - {fileID: 7857355358696452928, guid: c4a2a2387d6749d4e8f7a1d69a5d0b25, type: 3}
+  - {fileID: 7857355358696452928, guid: c4a2a2387d6749d4e8f7a1d69a5d0b25, type: 3}
 --- !u!4 &266292861
 Transform:
   m_ObjectHideFlags: 0
@@ -527,7 +530,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 37943e5494b979c489bff488651f2459, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -724,6 +727,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1347346934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347346936}
+  - component: {fileID: 1347346935}
+  m_Layer: 0
+  m_Name: Game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1347346935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347346934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686fe9d50bbe4074a806a395ff597cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_menuPlayers: []
+  m_characterName: Penguin
+--- !u!4 &1347346936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347346934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1349014017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 835351157438974549, guid: bdaa49fd7a4abfa4480025053c146fae,
@@ -1173,5 +1221,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 835351157438974544, guid: bdaa49fd7a4abfa4480025053c146fae,
+        type: 3}
+      propertyPath: moneyBoi
+      value: 
+      objectReference: {fileID: 2028591165}
+    - target: {fileID: 835351157438974544, guid: bdaa49fd7a4abfa4480025053c146fae,
+        type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1347346934}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdaa49fd7a4abfa4480025053c146fae, type: 3}
